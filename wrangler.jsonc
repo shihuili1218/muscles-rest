@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "muscles-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "muscles",
+          "database_id": "dc68d907-4837-47ba-b8c0-91c7ffa5102c"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "929afe4183104375b606bde99efc147b",
+            "binding": "SECRET",
+            "secret_name": "muscles"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
